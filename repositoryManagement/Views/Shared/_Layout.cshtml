@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Depo</title>
+</head>
+
+<body>
+
+    <!--cshtml sayfalarında MessageBox tanımlaması yapılmış mı ?-->
+    @* @if (IsSectionDefined("MessageBox"))
+    {
+        @RenderSection("MessageBox")
+    }
+    else
+    {
+        <!--cshtml sayfasında tanımlama yapılmamış ise else bloğu çalışır-->
+        <div class="alert alert-primary text-center m-0">
+            Welcome!
+        </div>
+    } *@
+
+    <!--tanımladığımız kompanent istediğimiz sayfada çalışır-->
+    @* @RenderSection("MessageBox", false) *@
+
+    @await Html.PartialAsync("_navbar")
+
+    @RenderSection("Header",false)
+    @* <partial name="_header"></partial> *@
+
+    @* @RenderSection("Categories", false) *@
+
+    <main class="my-3">
+
+        <div class="container">
+
+            @if (IsSectionDefined("Categories"))
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        @RenderSection("Categories",false)
+                        <p style="margin-top: 100px;" class="border border-danger">Depolardaki Toplam Ürün Sayısı : @ViewBag.tStock</p>
+                        <p style="margin-top: 10px;" class="border border-danger">Toplam Depo Sayısı : @ViewBag.tRepository</p>
+                    </div>
+                    <div class="col-md-9">
+                        @RenderBody()
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </main>
+
+    <footer id="footerBottom" class="py-5 bg-dark text-white text-center">
+        Depo | 02.01.2021
+    </footer> 
+
+    <!--jquery script linkini buraya yerleştirerek tüm cshtml sayfalarının jquery kullanabilmesini sağladım -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts", false)
+</body>
+
+</html>

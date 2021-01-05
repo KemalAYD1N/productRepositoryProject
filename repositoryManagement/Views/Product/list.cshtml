@@ -1,0 +1,39 @@
+@model ProductViewModel
+
+@{
+    Layout = "_Layout";
+} 
+
+@{
+    <!--Belirli koşulu sağlıyorsa style sınıfı uygulanır -->
+    var popularClass = Model.Products.Count>2? "popular":"";
+
+    var products = Model.Products;
+}
+@* @section MessageBox
+{
+    <div class="alert alert-warning text-center m-0">
+        Welcome!
+    </div>
+} *@
+
+@section Categories
+{
+    @await Component.InvokeAsync("Categories")
+}
+
+@if (products.Count == 0)
+{
+    @await Html.PartialAsync("_noproduct")            
+}
+else
+{
+    <div class="row">
+        @foreach (var product in products)
+        {
+            <div class="col-md-4">
+                @await Html.PartialAsync("_product", product)
+            </div>
+        }
+    </div>
+}  

@@ -1,0 +1,25 @@
+@model Product
+
+@* her bir ürünümüzün özellikleri burada görüntülenir *@
+<div class="card mb-2">
+
+    <img style="" class="card-img-top" src="~/images/@Model.ImageUrl" alt="">
+
+    <div class="card-body">
+
+        <h5 class="card-title">@Model.Name</h5>
+
+        <p class="card-text">@Model.Description</p>
+        @* incele butonuna basınca detail sayfasına yönlendirilir. *@
+        @* <a href="/product/details/@Model.ProductId" class="btn btn-primary">incele</a> *@
+        <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId" class="btn btn-primary btn-sm">İncele</a>
+        @* güncelle butonuna basınca edit sayfasına geçilir *@
+        <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-primary btn-sm">Güncelle</a>
+
+        <form method="POST" action="/product/delete" style="display: inline;">
+            <input type="hidden" name="ProductId" value="@Model.ProductId">
+            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+
+        </form>    
+    </div>
+</div>
