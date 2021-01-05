@@ -22,7 +22,7 @@ https://code.visualstudio.com/Download#
 	
 	--VsCode editörünü açınız.
 	--En üstteki menü kısmında;
-		-"File --> Open" Folder seçeneği ile indirilen klasör seçilir.
+		-"File --> Open Folder" seçeneği ile indirilen klasör seçilir.
 		-"Terminal --> New Terminal" seçeneği ile terminal açılır.
 	--Alt kısımda açılan terminal ekranına "dotnet watch run" yazarak çalıştırırız.
 
