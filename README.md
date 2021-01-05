@@ -11,12 +11,12 @@ Asp.Net Core Mvc ile Depo Projesi
 	--Aşağıdaki linki kullanarak ".Net Core 3.1 SDK (v3.1.404)" versiyonunu yükleyebilirsiniz.
 	--Yüklenen .exe uygulaması çalıştırılarak kurulum yapılır.
 	--cmd programını açarak "dotnet --version" yazarsak kurulum ve version kontrolü yapabiliriz. 
-	--https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.404-windows-x64-installer
+	"https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.404-windows-x64-installer"
 
 2 ---> Editör olarak "Visul Studio Code" kullanılmıştır.
 	
 	--Aşağıdaki linki kullanarak windows için olan versiyonu indirebilirsiniz.
-	--https://code.visualstudio.com/Download# aşağıdaki
+	"https://code.visualstudio.com/Download#" aşağıdaki
 
 3 ---> İndirilen Projenin VsCode editörü ile çalıştırılması
 	
